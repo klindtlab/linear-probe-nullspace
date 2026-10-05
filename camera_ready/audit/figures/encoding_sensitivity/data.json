@@ -1,0 +1,146 @@
+[
+ {
+  "dataset": "dsprites",
+  "model": "clip_b16",
+  "encoding": "canonical",
+  "gap": 0.0717,
+  "n_sample_seeds": 3,
+  "seed_range": 0.0108
+ },
+ {
+  "dataset": "dsprites",
+  "model": "clip_b16",
+  "encoding": "ordinal",
+  "gap": 0.0925,
+  "n_sample_seeds": 3,
+  "seed_range": 0.0105
+ },
+ {
+  "dataset": "dsprites",
+  "model": "clip_b16",
+  "encoding": "with_onehot",
+  "gap": 0.1244,
+  "n_sample_seeds": 3,
+  "seed_range": 0.0093
+ },
+ {
+  "dataset": "dsprites",
+  "model": "dinov3_b16",
+  "encoding": "canonical",
+  "gap": -0.5193,
+  "n_sample_seeds": 3,
+  "seed_range": 0.0086
+ },
+ {
+  "dataset": "dsprites",
+  "model": "dinov3_b16",
+  "encoding": "ordinal",
+  "gap": -0.3999,
+  "n_sample_seeds": 3,
+  "seed_range": 0.0046
+ },
+ {
+  "dataset": "dsprites",
+  "model": "dinov3_b16",
+  "encoding": "with_onehot",
+  "gap": -0.292,
+  "n_sample_seeds": 3,
+  "seed_range": 0.0097
+ },
+ {
+  "dataset": "mpi3d_realistic",
+  "model": "clip_b16",
+  "encoding": "canonical",
+  "gap": 0.0541,
+  "n_sample_seeds": 3,
+  "seed_range": 0.0061
+ },
+ {
+  "dataset": "mpi3d_realistic",
+  "model": "clip_b16",
+  "encoding": "ordinal",
+  "gap": -0.2156,
+  "n_sample_seeds": 3,
+  "seed_range": 0.0204
+ },
+ {
+  "dataset": "mpi3d_realistic",
+  "model": "clip_b16",
+  "encoding": "with_onehot",
+  "gap": -0.417,
+  "n_sample_seeds": 3,
+  "seed_range": 0.0121
+ },
+ {
+  "dataset": "mpi3d_realistic",
+  "model": "dinov3_b16",
+  "encoding": "canonical",
+  "gap": -0.2133,
+  "n_sample_seeds": 3,
+  "seed_range": 0.0028
+ },
+ {
+  "dataset": "mpi3d_realistic",
+  "model": "dinov3_b16",
+  "encoding": "ordinal",
+  "gap": -0.3449,
+  "n_sample_seeds": 3,
+  "seed_range": 0.0125
+ },
+ {
+  "dataset": "mpi3d_realistic",
+  "model": "dinov3_b16",
+  "encoding": "with_onehot",
+  "gap": -0.4789,
+  "n_sample_seeds": 3,
+  "seed_range": 0.0037
+ },
+ {
+  "dataset": "shapes3d",
+  "model": "clip_b16",
+  "encoding": "canonical",
+  "gap": -0.7551,
+  "n_sample_seeds": 3,
+  "seed_range": 0.0022
+ },
+ {
+  "dataset": "shapes3d",
+  "model": "clip_b16",
+  "encoding": "ordinal",
+  "gap": -0.0753,
+  "n_sample_seeds": 3,
+  "seed_range": 0.0037
+ },
+ {
+  "dataset": "shapes3d",
+  "model": "clip_b16",
+  "encoding": "with_onehot",
+  "gap": -0.4921,
+  "n_sample_seeds": 3,
+  "seed_range": 0.0013
+ },
+ {
+  "dataset": "shapes3d",
+  "model": "dinov3_b16",
+  "encoding": "canonical",
+  "gap": -0.5598,
+  "n_sample_seeds": 3,
+  "seed_range": 0.0027
+ },
+ {
+  "dataset": "shapes3d",
+  "model": "dinov3_b16",
+  "encoding": "ordinal",
+  "gap": 0.0725,
+  "n_sample_seeds": 3,
+  "seed_range": 0.0046
+ },
+ {
+  "dataset": "shapes3d",
+  "model": "dinov3_b16",
+  "encoding": "with_onehot",
+  "gap": -0.096,
+  "n_sample_seeds": 3,
+  "seed_range": 0.0039
+ }
+]

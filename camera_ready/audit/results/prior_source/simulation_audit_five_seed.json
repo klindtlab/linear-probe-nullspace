@@ -1,0 +1,19 @@
+{
+ "provenance": "rebuttal/results/simulation/simulation_audit_summary.json; five-seed means at width 1024, the source for the activation statistics in the paper",
+ "audit_width": 1024,
+ "n_seeds": 5,
+ "lift_linearity_reverse_r2": 0.24524850341966653,
+ "trained_wd1": {
+  "n_regions_mean": 1988.2, "n_regions_min": 1983.0,
+  "frac_gating_mean": 0.93671875,
+  "frac_dead_mean": 0.0359375,
+  "relu_active_fraction_mean": 0.2682970703125,
+  "jacobian_cv_mean": 0.6572729242589942,
+  "reverse_r2_mean": 0.9955607387100269,
+  "top2_eigenvalue_share_mean": 0.99572252035141,
+  "any_single_region": false, "any_constant_jacobian": false
+ },
+ "trained_wd0": {"frac_dead_mean": 0.0681640625, "reverse_r2_mean": 0.7856016527194088},
+ "random_init": {"frac_dead_mean": 0.000390625, "reverse_r2_mean": 0.21334282194943102,
+                 "frac_gating_mean": 0.998046875, "relu_active_fraction_mean": 0.50051220703125}
+}

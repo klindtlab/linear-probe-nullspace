@@ -1,0 +1,2 @@
+model,block,group,cross_style_rho_pre,cross_style_rho_rand,cross_style_rho_gap
+dinov3_b16,pooled,animal,0.355816,0.011842,0.343975

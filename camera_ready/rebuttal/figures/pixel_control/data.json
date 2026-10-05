@@ -1,0 +1,38 @@
+[
+ {
+  "ds": "svgworld",
+  "dataset_label": "SVG-World",
+  "pixel_d1_raw": 0.166434,
+  "pixel_d1_ceiling": 0.411638,
+  "pixel_forward_r2": 0.994859,
+  "mean_encoder_d1_gap": 0.166214,
+  "n_targets": 12
+ },
+ {
+  "ds": "dsprites",
+  "dataset_label": "dSprites",
+  "pixel_d1_raw": 0.213463,
+  "pixel_d1_ceiling": 0.48903,
+  "pixel_forward_r2": 0.496085,
+  "mean_encoder_d1_gap": -0.255144,
+  "n_targets": 5
+ },
+ {
+  "ds": "mpi3d_realistic",
+  "dataset_label": "MPI3D-realistic",
+  "pixel_d1_raw": 0.389467,
+  "pixel_d1_ceiling": 0.676338,
+  "pixel_forward_r2": 0.635749,
+  "mean_encoder_d1_gap": -0.243666,
+  "n_targets": 4
+ },
+ {
+  "ds": "shapes3d",
+  "dataset_label": "3D Shapes",
+  "pixel_d1_raw": 0.835577,
+  "pixel_d1_ceiling": 0.885442,
+  "pixel_forward_r2": 0.998297,
+  "mean_encoder_d1_gap": -0.536761,
+  "n_targets": 8
+ }
+]

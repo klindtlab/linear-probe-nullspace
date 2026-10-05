@@ -1,0 +1,272 @@
+[
+ {
+  "condition": "random",
+  "k": 1,
+  "S": 0.7596,
+  "C": 0.4888
+ },
+ {
+  "condition": "random",
+  "k": 12,
+  "S": 0.1598,
+  "C": 0.996
+ },
+ {
+  "condition": "random",
+  "k": 128,
+  "S": 0.015,
+  "C": 1.0
+ },
+ {
+  "condition": "random",
+  "k": 16,
+  "S": 0.121,
+  "C": 0.9982
+ },
+ {
+  "condition": "random",
+  "k": 2,
+  "S": 0.7127,
+  "C": 0.8517
+ },
+ {
+  "condition": "random",
+  "k": 24,
+  "S": 0.0815,
+  "C": 0.9995
+ },
+ {
+  "condition": "random",
+  "k": 256,
+  "S": 0.0071,
+  "C": 1.0
+ },
+ {
+  "condition": "random",
+  "k": 3,
+  "S": 0.5042,
+  "C": 0.8841
+ },
+ {
+  "condition": "random",
+  "k": 32,
+  "S": 0.0618,
+  "C": 1.0
+ },
+ {
+  "condition": "random",
+  "k": 4,
+  "S": 0.4016,
+  "C": 0.9217
+ },
+ {
+  "condition": "random",
+  "k": 48,
+  "S": 0.0413,
+  "C": 1.0
+ },
+ {
+  "condition": "random",
+  "k": 512,
+  "S": 0.0031,
+  "C": 1.0
+ },
+ {
+  "condition": "random",
+  "k": 6,
+  "S": 0.2804,
+  "C": 0.9457
+ },
+ {
+  "condition": "random",
+  "k": 64,
+  "S": 0.0308,
+  "C": 1.0
+ },
+ {
+  "condition": "random",
+  "k": 8,
+  "S": 0.2245,
+  "C": 0.9779
+ },
+ {
+  "condition": "trained_wd0",
+  "k": 1,
+  "S": 0.9866,
+  "C": 0.6786
+ },
+ {
+  "condition": "trained_wd0",
+  "k": 12,
+  "S": 0.1662,
+  "C": 1.0
+ },
+ {
+  "condition": "trained_wd0",
+  "k": 128,
+  "S": 0.0149,
+  "C": 1.0
+ },
+ {
+  "condition": "trained_wd0",
+  "k": 16,
+  "S": 0.1245,
+  "C": 1.0
+ },
+ {
+  "condition": "trained_wd0",
+  "k": 2,
+  "S": 0.9893,
+  "C": 0.9993
+ },
+ {
+  "condition": "trained_wd0",
+  "k": 24,
+  "S": 0.0829,
+  "C": 1.0
+ },
+ {
+  "condition": "trained_wd0",
+  "k": 256,
+  "S": 0.007,
+  "C": 1.0
+ },
+ {
+  "condition": "trained_wd0",
+  "k": 3,
+  "S": 0.6633,
+  "C": 0.9997
+ },
+ {
+  "condition": "trained_wd0",
+  "k": 32,
+  "S": 0.0623,
+  "C": 1.0
+ },
+ {
+  "condition": "trained_wd0",
+  "k": 4,
+  "S": 0.5001,
+  "C": 0.9998
+ },
+ {
+  "condition": "trained_wd0",
+  "k": 48,
+  "S": 0.0414,
+  "C": 1.0
+ },
+ {
+  "condition": "trained_wd0",
+  "k": 512,
+  "S": 0.0031,
+  "C": 1.0
+ },
+ {
+  "condition": "trained_wd0",
+  "k": 6,
+  "S": 0.3332,
+  "C": 1.0
+ },
+ {
+  "condition": "trained_wd0",
+  "k": 64,
+  "S": 0.0308,
+  "C": 1.0
+ },
+ {
+  "condition": "trained_wd0",
+  "k": 8,
+  "S": 0.2506,
+  "C": 1.0
+ },
+ {
+  "condition": "trained_wd1",
+  "k": 1,
+  "S": 0.9998,
+  "C": 0.5376
+ },
+ {
+  "condition": "trained_wd1",
+  "k": 12,
+  "S": 0.1673,
+  "C": 1.0
+ },
+ {
+  "condition": "trained_wd1",
+  "k": 128,
+  "S": 0.0149,
+  "C": 1.0
+ },
+ {
+  "condition": "trained_wd1",
+  "k": 16,
+  "S": 0.125,
+  "C": 1.0
+ },
+ {
+  "condition": "trained_wd1",
+  "k": 2,
+  "S": 0.9998,
+  "C": 1.0
+ },
+ {
+  "condition": "trained_wd1",
+  "k": 24,
+  "S": 0.0832,
+  "C": 1.0
+ },
+ {
+  "condition": "trained_wd1",
+  "k": 256,
+  "S": NaN,
+  "C": 1.0
+ },
+ {
+  "condition": "trained_wd1",
+  "k": 3,
+  "S": 0.6688,
+  "C": 1.0
+ },
+ {
+  "condition": "trained_wd1",
+  "k": 32,
+  "S": 0.0623,
+  "C": 1.0
+ },
+ {
+  "condition": "trained_wd1",
+  "k": 4,
+  "S": 0.5022,
+  "C": 1.0
+ },
+ {
+  "condition": "trained_wd1",
+  "k": 48,
+  "S": 0.0412,
+  "C": 1.0
+ },
+ {
+  "condition": "trained_wd1",
+  "k": 512,
+  "S": NaN,
+  "C": 1.0
+ },
+ {
+  "condition": "trained_wd1",
+  "k": 6,
+  "S": 0.3346,
+  "C": 1.0
+ },
+ {
+  "condition": "trained_wd1",
+  "k": 64,
+  "S": 0.0307,
+  "C": 1.0
+ },
+ {
+  "condition": "trained_wd1",
+  "k": 8,
+  "S": 0.2508,
+  "C": 1.0
+ }
+]

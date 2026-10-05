@@ -1,0 +1,80 @@
+{
+ "per_factor": [
+  {
+   "factor": "alpha_mode=cv",
+   "min": 2e-05,
+   "max": 0.00142,
+   "mean": 0.00066
+  },
+  {
+   "factor": "dtype=f64",
+   "min": 0.0,
+   "max": 0.0,
+   "mean": 0.0
+  },
+  {
+   "factor": "formula=sse",
+   "min": -0.00071,
+   "max": -0.00037,
+   "mean": -0.00054
+  },
+  {
+   "factor": "split=unit0",
+   "min": -0.00247,
+   "max": 0.00078,
+   "mean": -0.0005
+  },
+  {
+   "factor": "targets=position12",
+   "min": 0.00087,
+   "max": 0.00375,
+   "mean": 0.00255
+  }
+ ],
+ "submitted_vs_revised": [
+  {
+   "condition": "island|pre|cls",
+   "submitted": 0.21416
+  },
+  {
+   "condition": "island|pre|patches_mean",
+   "submitted": 0.27665
+  },
+  {
+   "condition": "island|rand42|cls",
+   "submitted": 0.02205
+  },
+  {
+   "condition": "island|rand42|patches_mean",
+   "submitted": 0.02427
+  },
+  {
+   "condition": "western|pre|cls",
+   "submitted": 0.16192
+  },
+  {
+   "condition": "western|pre|patches_mean",
+   "submitted": 0.2888
+  },
+  {
+   "condition": "western|rand42|cls",
+   "submitted": 0.01597
+  },
+  {
+   "condition": "western|rand42|patches_mean",
+   "submitted": 0.01664
+  }
+ ],
+ "reported_in_paper": {
+  "cls_pre": 0.1812,
+  "cls_rand": 0.0194,
+  "patches_pre": 0.2759,
+  "patches_rand": 0.0225
+ },
+ "reproduced": {
+  "cls_pre": 0.188,
+  "cls_rand": 0.019,
+  "patches_pre": 0.2827,
+  "patches_rand": 0.0205
+ }
+}

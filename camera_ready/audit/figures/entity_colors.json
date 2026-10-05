@@ -1,0 +1,13 @@
+{
+ "S(k) (paper D2 statistic)": "#C4650D",
+ "C(k) (audit alternative)": "#4E728A",
+ "random init": "#C4650D",
+ "trained, weight decay 1": "#2E6E4E",
+ "trained, weight decay 0": "#4E728A",
+ "canonical encoding": "#C4650D",
+ "ordinal encoding": "#4E728A",
+ "one-hot encoding": "#988453",
+ "CLIP B/16": "#4E728A",
+ "DINOv3 B/16": "#2E6E4E",
+ "ResNet-50": "#C4650D"
+}

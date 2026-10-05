@@ -1,0 +1,10 @@
+dataset,model,diagnostic,device,pil,abs_shift,sign_same
+3D Shapes,dinov3_b16,D1_raw,-0.548204,-0.547781,0.000423,True
+3D Shapes,dinov3_b16,forward,-0.002065,-0.000531,0.001535,True
+3D Shapes,dinov3_b16,D3_checkerboard,-0.002419,-0.001085,0.001334,True
+3D Shapes,clip_b16,D1_raw,-0.749834,-0.748259,0.001575,True
+3D Shapes,clip_b16,forward,-0.015485,-0.015674,0.000189,True
+3D Shapes,clip_b16,D3_checkerboard,-0.018136,-0.018584,0.000448,True
+3D Shapes,resnet50,D1_raw,-0.31471,-0.314243,0.000467,True
+3D Shapes,resnet50,forward,-0.112641,-0.112104,0.000536,True
+3D Shapes,resnet50,D3_checkerboard,-0.117352,-0.116407,0.000944,True

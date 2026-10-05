@@ -1,0 +1,5 @@
+dataset,sample_seed,model,encoding,statistic,hierarchical_point,hierarchical_lo,hierarchical_hi,hierarchical_excludes_zero,n_control_seeds,single_seed_point,single_seed_lo,single_seed_hi,single_seed_excludes_zero
+mpi3d_realistic,1234,clip_b16,canonical,d1_gap_pre_minus_rand,0.0570370264996161,0.04850309850495962,0.06532802225726116,True,5,0.0566460782146877,0.049657773246477924,0.06376118128151204,True
+mpi3d_realistic,1234,dinov3_b16,canonical,d1_gap_pre_minus_rand,-0.21327657138335165,-0.2355005639067784,-0.18823705443644143,True,5,-0.22025803178014725,-0.225430972745996,-0.2149715024612407,True
+mpi3d_realistic,1234,resnet50,canonical,d1_gap_pre_minus_rand,-0.6610869973906205,-0.7262461170917311,-0.5963935024386103,True,5,-0.5673843865329568,-0.5759066463794628,-0.558593609011701,True
+mpi3d_realistic,1234,resnet50,canonical,d1_gap_pre_minus_rand_bncalibrated,0.10284920899257954,0.09033813155123835,0.11532647789028322,True,2,,,,

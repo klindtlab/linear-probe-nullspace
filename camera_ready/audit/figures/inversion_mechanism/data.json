@@ -1,0 +1,78 @@
+{
+ "dataset": "shapes3d",
+ "sample_seed": 1234,
+ "n": 20000,
+ "rows": [
+  {
+   "model": "clip_b16",
+   "kind": "pretrained",
+   "n_instances": 1,
+   "d1": 0.1501,
+   "forward_r2": 0.9558,
+   "participation_ratio": 16.569,
+   "pc1_share": 0.1426,
+   "d3_calibrated_r2": 0.9467
+  },
+  {
+   "model": "clip_b16",
+   "kind": "random",
+   "n_instances": 5,
+   "d1": 0.9039,
+   "forward_r2": 0.9716,
+   "participation_ratio": 2.314,
+   "pc1_share": 0.4891,
+   "d3_calibrated_r2": 0.9578
+  },
+  {
+   "model": "dinov3_b16",
+   "kind": "pretrained",
+   "n_instances": 1,
+   "d1": 0.1053,
+   "forward_r2": 0.9574,
+   "participation_ratio": 8.69,
+   "pc1_share": 0.2565,
+   "d3_calibrated_r2": 0.9597
+  },
+  {
+   "model": "dinov3_b16",
+   "kind": "random",
+   "n_instances": 5,
+   "d1": 0.6647,
+   "forward_r2": 0.9591,
+   "participation_ratio": 3.753,
+   "pc1_share": 0.3732,
+   "d3_calibrated_r2": 0.9293
+  },
+  {
+   "model": "resnet50",
+   "kind": "pretrained",
+   "n_instances": 1,
+   "d1": 0.077,
+   "forward_r2": 0.8772,
+   "participation_ratio": 13.287,
+   "pc1_share": 0.1899,
+   "d3_calibrated_r2": 0.8841
+  },
+  {
+   "model": "resnet50",
+   "kind": "random",
+   "n_instances": 5,
+   "d1": 0.3931,
+   "forward_r2": 0.9873,
+   "participation_ratio": 1.227,
+   "pc1_share": 0.9042,
+   "d3_calibrated_r2": 0.9818
+  },
+  {
+   "model": "resnet50",
+   "kind": "random_bncal",
+   "n_instances": 2,
+   "d1": 0.1443,
+   "forward_r2": 0.744,
+   "participation_ratio": 5.117,
+   "pc1_share": 0.4505,
+   "d3_calibrated_r2": 0.7229
+  }
+ ],
+ "note": "D1 rewards a low-dimensional feature spectrum: the random controls concentrate variance in few directions while forward decodability is comparable"
+}

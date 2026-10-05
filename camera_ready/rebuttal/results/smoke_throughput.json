@@ -1,0 +1,118 @@
+{
+ "throughput": [
+  {
+   "model": "dinov3_s16",
+   "label": "DINOv3 ViT-S/16",
+   "images_per_second": 2500.0,
+   "width": 384,
+   "minutes_per_pre_rand_pair_20k": 0.27
+  },
+  {
+   "model": "dinov3_b16",
+   "label": "DINOv3 ViT-B/16",
+   "images_per_second": 1075.7,
+   "width": 768,
+   "minutes_per_pre_rand_pair_20k": 0.62
+  },
+  {
+   "model": "dinov3_l16",
+   "label": "DINOv3 ViT-L/16",
+   "images_per_second": 327.2,
+   "width": 1024,
+   "minutes_per_pre_rand_pair_20k": 2.04
+  },
+  {
+   "model": "dinov2_b14",
+   "label": "DINOv2 ViT-B/14",
+   "images_per_second": 830.0,
+   "width": 768,
+   "minutes_per_pre_rand_pair_20k": 0.8
+  },
+  {
+   "model": "deit_b16",
+   "label": "DeiT-B/16",
+   "images_per_second": 1035.1,
+   "width": 768,
+   "minutes_per_pre_rand_pair_20k": 0.64
+  },
+  {
+   "model": "clip_b16",
+   "label": "CLIP ViT-B/16",
+   "images_per_second": 1010.0,
+   "width": 768,
+   "minutes_per_pre_rand_pair_20k": 0.66
+  },
+  {
+   "model": "resnet50",
+   "label": "ResNet-50",
+   "images_per_second": 8053.1,
+   "width": 2048,
+   "minutes_per_pre_rand_pair_20k": 0.08
+  }
+ ],
+ "batch_tuning": [
+  {
+   "model": "DINOv3 ViT-B/16",
+   "batch": 64,
+   "images_per_second": 954.7,
+   "peak_mem_gb": 1.95
+  },
+  {
+   "model": "DINOv3 ViT-B/16",
+   "batch": 128,
+   "images_per_second": 1075.7,
+   "peak_mem_gb": 1.95
+  },
+  {
+   "model": "DINOv3 ViT-B/16",
+   "batch": 256,
+   "images_per_second": 1073.6,
+   "peak_mem_gb": 2.47
+  },
+  {
+   "model": "DINOv3 ViT-L/16",
+   "batch": 64,
+   "images_per_second": 283.4,
+   "peak_mem_gb": 2.47
+  },
+  {
+   "model": "DINOv3 ViT-L/16",
+   "batch": 128,
+   "images_per_second": 318.9,
+   "peak_mem_gb": 2.62
+  },
+  {
+   "model": "DINOv3 ViT-L/16",
+   "batch": 256,
+   "images_per_second": 327.2,
+   "peak_mem_gb": 3.97
+  },
+  {
+   "model": "ResNet-50",
+   "batch": 64,
+   "images_per_second": 7011.3,
+   "peak_mem_gb": 3.97
+  },
+  {
+   "model": "ResNet-50",
+   "batch": 128,
+   "images_per_second": 7694.8,
+   "peak_mem_gb": 3.97
+  },
+  {
+   "model": "ResNet-50",
+   "batch": 256,
+   "images_per_second": 8053.1,
+   "peak_mem_gb": 3.97
+  }
+ ],
+ "smoke_stage_seconds": {
+  "simulation": 6.02,
+  "render_checks": 0.74,
+  "render": 3.37,
+  "extract": 65.64,
+  "diagnostics": 132.42,
+  "tune": 16.77,
+  "dataset_prepare": 8.99
+ }
+}

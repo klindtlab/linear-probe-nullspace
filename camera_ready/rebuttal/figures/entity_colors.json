@@ -1,0 +1,16 @@
+{
+ "dinov3_b16": "#C4650D",
+ "clip_b16": "#4E728A",
+ "resnet50": "#2E6E4E",
+ "deit_b16": "#988453",
+ "dinov3_l16": "#B9605B",
+ "dinov2_b14": "#7495AB",
+ "dinov3_s16": "#84713A",
+ "pretrained": "#C4650D",
+ "random": "#4E728A",
+ "trained_wd1": "#C4650D",
+ "trained_wd0": "#2E6E4E",
+ "random_init": "#4E728A",
+ "island": "#2E6E4E",
+ "western": "#988453"
+}

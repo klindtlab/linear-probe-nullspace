@@ -1,0 +1,19 @@
+[project]
+name = "linear-probe-audit"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+    "kaleido==0.2.1",
+    "plotly<6.9",
+    "pyyaml",
+]
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
+[tool.uv.sources]
+torch = { index = "pytorch-cpu" }
+torchvision = { index = "pytorch-cpu" }
+torchaudio = { index = "pytorch-cpu" }

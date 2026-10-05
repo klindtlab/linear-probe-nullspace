@@ -1,0 +1,110 @@
+[
+ {
+  "dataset": "mpi3d_realistic",
+  "model": "clip_b16",
+  "control": "uncalibrated",
+  "gap": 0.057,
+  "lo": 0.0485,
+  "hi": 0.0653,
+  "n_control_seeds": 5
+ },
+ {
+  "dataset": "mpi3d_realistic",
+  "model": "dinov3_b16",
+  "control": "uncalibrated",
+  "gap": -0.2133,
+  "lo": -0.2355,
+  "hi": -0.1882,
+  "n_control_seeds": 5
+ },
+ {
+  "dataset": "mpi3d_realistic",
+  "model": "resnet50",
+  "control": "uncalibrated",
+  "gap": -0.6611,
+  "lo": -0.7262,
+  "hi": -0.5964,
+  "n_control_seeds": 5
+ },
+ {
+  "dataset": "mpi3d_realistic",
+  "model": "resnet50",
+  "control": "bn_calibrated",
+  "gap": 0.1028,
+  "lo": 0.0903,
+  "hi": 0.1153,
+  "n_control_seeds": 2
+ },
+ {
+  "dataset": "dsprites",
+  "model": "clip_b16",
+  "control": "uncalibrated",
+  "gap": 0.0766,
+  "lo": 0.0692,
+  "hi": 0.0836,
+  "n_control_seeds": 5
+ },
+ {
+  "dataset": "dsprites",
+  "model": "dinov3_b16",
+  "control": "uncalibrated",
+  "gap": -0.516,
+  "lo": -0.525,
+  "hi": -0.5053,
+  "n_control_seeds": 5
+ },
+ {
+  "dataset": "dsprites",
+  "model": "resnet50",
+  "control": "uncalibrated",
+  "gap": -0.2967,
+  "lo": -0.3474,
+  "hi": -0.23,
+  "n_control_seeds": 5
+ },
+ {
+  "dataset": "dsprites",
+  "model": "resnet50",
+  "control": "bn_calibrated",
+  "gap": 0.0567,
+  "lo": 0.0512,
+  "hi": 0.0623,
+  "n_control_seeds": 2
+ },
+ {
+  "dataset": "shapes3d",
+  "model": "clip_b16",
+  "control": "uncalibrated",
+  "gap": -0.7538,
+  "lo": -0.7581,
+  "hi": -0.7496,
+  "n_control_seeds": 5
+ },
+ {
+  "dataset": "shapes3d",
+  "model": "dinov3_b16",
+  "control": "uncalibrated",
+  "gap": -0.5593,
+  "lo": -0.5706,
+  "hi": -0.5489,
+  "n_control_seeds": 5
+ },
+ {
+  "dataset": "shapes3d",
+  "model": "resnet50",
+  "control": "uncalibrated",
+  "gap": -0.3161,
+  "lo": -0.5284,
+  "hi": -0.12,
+  "n_control_seeds": 5
+ },
+ {
+  "dataset": "shapes3d",
+  "model": "resnet50",
+  "control": "bn_calibrated",
+  "gap": -0.0673,
+  "lo": -0.0962,
+  "hi": -0.0386,
+  "n_control_seeds": 2
+ }
+]

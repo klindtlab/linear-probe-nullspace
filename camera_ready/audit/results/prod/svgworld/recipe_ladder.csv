@@ -1,0 +1,89 @@
+condition,label,step,formula,dtype,targets,alpha_mode,split,alpha,d1,n_train,n_test,delta_vs_submitted
+island|pre|cls,submitted recipe,baseline,variance,f32,all32,fixed1,legacy42,1.0,0.2141556739807129,5000,5000,
+island|pre|cls,one factor: formula=sse,single,sse,f32,all32,fixed1,legacy42,1.0,0.2137417674953661,5000,5000,-0.0004139064853467822
+island|pre|cls,one factor: dtype=f64,single,variance,f64,all32,fixed1,legacy42,1.0,0.2141556739807129,5000,5000,0.0
+island|pre|cls,one factor: targets=position12,single,variance,f32,position12,fixed1,legacy42,1.0,0.2150285840034485,5000,5000,0.0008729100227355957
+island|pre|cls,one factor: alpha_mode=cv,single,variance,f32,all32,cv,legacy42,10.0,0.21418166160583496,5000,5000,2.5987625122070312e-05
+island|pre|cls,one factor: split=unit0,single,variance,f32,all32,fixed1,unit0,1.0,0.2116849422454834,5000,5000,-0.002470731735229492
+island|pre|cls,cumulative through formula=sse,cumulative,sse,f32,all32,fixed1,legacy42,1.0,0.2137417674953661,5000,5000,-0.0004139064853467822
+island|pre|cls,cumulative through dtype=f64,cumulative,sse,f64,all32,fixed1,legacy42,1.0,0.2137417674953661,5000,5000,-0.0004139064853467822
+island|pre|cls,cumulative through targets=position12,cumulative,sse,f64,position12,fixed1,legacy42,1.0,0.21462028933997346,5000,5000,0.0004646153592605673
+island|pre|cls,cumulative through alpha_mode=cv,cumulative,sse,f64,position12,cv,legacy42,1.0,0.21462028933997346,5000,5000,0.0004646153592605673
+island|pre|cls,revised recipe,cumulative,sse,f64,position12,cv,unit0,1.0,0.21240528619370025,5000,5000,-0.0017503877870126416
+island|pre|patches_mean,submitted recipe,baseline,variance,f32,all32,fixed1,legacy42,1.0,0.2766515612602234,5000,5000,
+island|pre|patches_mean,one factor: formula=sse,single,sse,f32,all32,fixed1,legacy42,1.0,0.2761288691130792,5000,5000,-0.000522692147144177
+island|pre|patches_mean,one factor: dtype=f64,single,variance,f64,all32,fixed1,legacy42,1.0,0.2766515612602234,5000,5000,0.0
+island|pre|patches_mean,one factor: targets=position12,single,variance,f32,position12,fixed1,legacy42,1.0,0.2785896062850952,5000,5000,0.0019380450248718262
+island|pre|patches_mean,one factor: alpha_mode=cv,single,variance,f32,all32,cv,legacy42,10.0,0.2766728401184082,5000,5000,2.1278858184814453e-05
+island|pre|patches_mean,one factor: split=unit0,single,variance,f32,all32,fixed1,unit0,1.0,0.27520751953125,5000,5000,-0.0014440417289733887
+island|pre|patches_mean,cumulative through formula=sse,cumulative,sse,f32,all32,fixed1,legacy42,1.0,0.2761288691130792,5000,5000,-0.000522692147144177
+island|pre|patches_mean,cumulative through dtype=f64,cumulative,sse,f64,all32,fixed1,legacy42,1.0,0.2761288691130792,5000,5000,-0.000522692147144177
+island|pre|patches_mean,cumulative through targets=position12,cumulative,sse,f64,position12,fixed1,legacy42,1.0,0.27808960073237887,5000,5000,0.0014380394721554834
+island|pre|patches_mean,cumulative through alpha_mode=cv,cumulative,sse,f64,position12,cv,legacy42,1.0,0.27808960073237887,5000,5000,0.0014380394721554834
+island|pre|patches_mean,revised recipe,cumulative,sse,f64,position12,cv,unit0,1.0,0.27647429830816683,5000,5000,-0.00017726295205655607
+island|rand42|cls,submitted recipe,baseline,variance,f32,all32,fixed1,legacy42,1.0,0.02204841375350952,5000,5000,
+island|rand42|cls,one factor: formula=sse,single,sse,f32,all32,fixed1,legacy42,1.0,0.021336852304734366,5000,5000,-0.0007115614487751554
+island|rand42|cls,one factor: dtype=f64,single,variance,f64,all32,fixed1,legacy42,1.0,0.02204841375350952,5000,5000,0.0
+island|rand42|cls,one factor: targets=position12,single,variance,f32,position12,fixed1,legacy42,1.0,0.025796949863433838,5000,5000,0.0037485361099243164
+island|rand42|cls,one factor: alpha_mode=cv,single,variance,f32,all32,cv,legacy42,100.0,0.023159027099609375,5000,5000,0.0011106133460998535
+island|rand42|cls,one factor: split=unit0,single,variance,f32,all32,fixed1,unit0,1.0,0.022451400756835938,5000,5000,0.000402987003326416
+island|rand42|cls,cumulative through formula=sse,cumulative,sse,f32,all32,fixed1,legacy42,1.0,0.021336852304734366,5000,5000,-0.0007115614487751554
+island|rand42|cls,cumulative through dtype=f64,cumulative,sse,f64,all32,fixed1,legacy42,1.0,0.021336852304734366,5000,5000,-0.0007115614487751554
+island|rand42|cls,cumulative through targets=position12,cumulative,sse,f64,position12,fixed1,legacy42,1.0,0.02507310210885516,5000,5000,0.0030246883553456394
+island|rand42|cls,cumulative through alpha_mode=cv,cumulative,sse,f64,position12,cv,legacy42,10.0,0.025156033726910665,5000,5000,0.0031076199734011434
+island|rand42|cls,revised recipe,cumulative,sse,f64,position12,cv,unit0,10.0,0.025834222390783146,5000,5000,0.0037858086372736244
+island|rand42|patches_mean,submitted recipe,baseline,variance,f32,all32,fixed1,legacy42,1.0,0.02427375316619873,5000,5000,
+island|rand42|patches_mean,one factor: formula=sse,single,sse,f32,all32,fixed1,legacy42,1.0,0.023659478092223685,5000,5000,-0.0006142750739750458
+island|rand42|patches_mean,one factor: dtype=f64,single,variance,f64,all32,fixed1,legacy42,1.0,0.02427375316619873,5000,5000,0.0
+island|rand42|patches_mean,one factor: targets=position12,single,variance,f32,position12,fixed1,legacy42,1.0,0.02773141860961914,5000,5000,0.00345766544342041
+island|rand42|patches_mean,one factor: alpha_mode=cv,single,variance,f32,all32,cv,legacy42,100.0,0.025345981121063232,5000,5000,0.001072227954864502
+island|rand42|patches_mean,one factor: split=unit0,single,variance,f32,all32,fixed1,unit0,1.0,0.024844110012054443,5000,5000,0.0005703568458557129
+island|rand42|patches_mean,cumulative through formula=sse,cumulative,sse,f32,all32,fixed1,legacy42,1.0,0.023659478092223685,5000,5000,-0.0006142750739750458
+island|rand42|patches_mean,cumulative through dtype=f64,cumulative,sse,f64,all32,fixed1,legacy42,1.0,0.023659478092223685,5000,5000,-0.0006142750739750458
+island|rand42|patches_mean,cumulative through targets=position12,cumulative,sse,f64,position12,fixed1,legacy42,1.0,0.027106910026088005,5000,5000,0.0028331568598892742
+island|rand42|patches_mean,cumulative through alpha_mode=cv,cumulative,sse,f64,position12,cv,legacy42,10.0,0.027206187326724307,5000,5000,0.0029324341605255766
+island|rand42|patches_mean,revised recipe,cumulative,sse,f64,position12,cv,unit0,10.0,0.0283788880507152,5000,5000,0.00410513488451647
+western|pre|cls,submitted recipe,baseline,variance,f32,all32,fixed1,legacy42,1.0,0.1619245409965515,5000,5000,
+western|pre|cls,one factor: formula=sse,single,sse,f32,all32,fixed1,legacy42,1.0,0.1614531606648243,5000,5000,-0.0004713803317272225
+western|pre|cls,one factor: dtype=f64,single,variance,f64,all32,fixed1,legacy42,1.0,0.1619245409965515,5000,5000,0.0
+western|pre|cls,one factor: targets=position12,single,variance,f32,position12,fixed1,legacy42,1.0,0.16346269845962524,5000,5000,0.0015381574630737305
+western|pre|cls,one factor: alpha_mode=cv,single,variance,f32,all32,cv,legacy42,10.0,0.1620228886604309,5000,5000,9.834766387939453e-05
+western|pre|cls,one factor: split=unit0,single,variance,f32,all32,fixed1,unit0,1.0,0.16003292798995972,5000,5000,-0.0018916130065917969
+western|pre|cls,cumulative through formula=sse,cumulative,sse,f32,all32,fixed1,legacy42,1.0,0.1614531606648243,5000,5000,-0.0004713803317272225
+western|pre|cls,cumulative through dtype=f64,cumulative,sse,f64,all32,fixed1,legacy42,1.0,0.1614531606648243,5000,5000,-0.0004713803317272225
+western|pre|cls,cumulative through targets=position12,cumulative,sse,f64,position12,fixed1,legacy42,1.0,0.16299103469587461,5000,5000,0.0010664936993231011
+western|pre|cls,cumulative through alpha_mode=cv,cumulative,sse,f64,position12,cv,legacy42,10.0,0.16297066377733505,5000,5000,0.0010461227807835316
+western|pre|cls,revised recipe,cumulative,sse,f64,position12,cv,unit0,1.0,0.1618210484737832,5000,5000,-0.00010349252276831145
+western|pre|patches_mean,submitted recipe,baseline,variance,f32,all32,fixed1,legacy42,1.0,0.28880345821380615,5000,5000,
+western|pre|patches_mean,one factor: formula=sse,single,sse,f32,all32,fixed1,legacy42,1.0,0.2884351911549463,5000,5000,-0.0003682670588598391
+western|pre|patches_mean,one factor: dtype=f64,single,variance,f64,all32,fixed1,legacy42,1.0,0.28880345821380615,5000,5000,0.0
+western|pre|patches_mean,one factor: targets=position12,single,variance,f32,position12,fixed1,legacy42,1.0,0.2905128002166748,5000,5000,0.0017093420028686523
+western|pre|patches_mean,one factor: alpha_mode=cv,single,variance,f32,all32,cv,legacy42,10.0,0.28889000415802,5000,5000,8.654594421386719e-05
+western|pre|patches_mean,one factor: split=unit0,single,variance,f32,all32,fixed1,unit0,1.0,0.2884328365325928,5000,5000,-0.0003706216812133789
+western|pre|patches_mean,cumulative through formula=sse,cumulative,sse,f32,all32,fixed1,legacy42,1.0,0.2884351911549463,5000,5000,-0.0003682670588598391
+western|pre|patches_mean,cumulative through dtype=f64,cumulative,sse,f64,all32,fixed1,legacy42,1.0,0.2884351911549463,5000,5000,-0.0003682670588598391
+western|pre|patches_mean,cumulative through targets=position12,cumulative,sse,f64,position12,fixed1,legacy42,1.0,0.29014062808658425,5000,5000,0.001337169872778099
+western|pre|patches_mean,cumulative through alpha_mode=cv,cumulative,sse,f64,position12,cv,legacy42,1.0,0.29014062808658425,5000,5000,0.001337169872778099
+western|pre|patches_mean,revised recipe,cumulative,sse,f64,position12,cv,unit0,1.0,0.29028200526838366,5000,5000,0.001478547054577506
+western|rand42|cls,submitted recipe,baseline,variance,f32,all32,fixed1,legacy42,1.0,0.015974104404449463,5000,5000,
+western|rand42|cls,one factor: formula=sse,single,sse,f32,all32,fixed1,legacy42,1.0,0.015332028198718262,5000,5000,-0.0006420762057312013
+western|rand42|cls,one factor: dtype=f64,single,variance,f64,all32,fixed1,legacy42,1.0,0.015974104404449463,5000,5000,0.0
+western|rand42|cls,one factor: targets=position12,single,variance,f32,position12,fixed1,legacy42,1.0,0.019493281841278076,5000,5000,0.0035191774368286133
+western|rand42|cls,one factor: alpha_mode=cv,single,variance,f32,all32,cv,legacy42,100.0,0.01738739013671875,5000,5000,0.0014132857322692871
+western|rand42|cls,one factor: split=unit0,single,variance,f32,all32,fixed1,unit0,1.0,0.01644003391265869,5000,5000,0.0004659295082092285
+western|rand42|cls,cumulative through formula=sse,cumulative,sse,f32,all32,fixed1,legacy42,1.0,0.015332028198718262,5000,5000,-0.0006420762057312013
+western|rand42|cls,cumulative through dtype=f64,cumulative,sse,f64,all32,fixed1,legacy42,1.0,0.015332028198718262,5000,5000,-0.0006420762057312013
+western|rand42|cls,cumulative through targets=position12,cumulative,sse,f64,position12,fixed1,legacy42,1.0,0.018844646895616157,5000,5000,0.0028705424911666944
+western|rand42|cls,cumulative through alpha_mode=cv,cumulative,sse,f64,position12,cv,legacy42,10.0,0.01894434378587051,5000,5000,0.002970239381421047
+western|rand42|cls,revised recipe,cumulative,sse,f64,position12,cv,unit0,10.0,0.01967357601691555,5000,5000,0.0036994716124660876
+western|rand42|patches_mean,submitted recipe,baseline,variance,f32,all32,fixed1,legacy42,1.0,0.016644775867462158,5000,5000,
+western|rand42|patches_mean,one factor: formula=sse,single,sse,f32,all32,fixed1,legacy42,1.0,0.01610730108324998,5000,5000,-0.0005374747842121774
+western|rand42|patches_mean,one factor: dtype=f64,single,variance,f64,all32,fixed1,legacy42,1.0,0.016644775867462158,5000,5000,0.0
+western|rand42|patches_mean,one factor: targets=position12,single,variance,f32,position12,fixed1,legacy42,1.0,0.020237982273101807,5000,5000,0.0035932064056396484
+western|rand42|patches_mean,one factor: alpha_mode=cv,single,variance,f32,all32,cv,legacy42,100.0,0.018065810203552246,5000,5000,0.0014210343360900879
+western|rand42|patches_mean,one factor: split=unit0,single,variance,f32,all32,fixed1,unit0,1.0,0.017420589923858643,5000,5000,0.0007758140563964844
+western|rand42|patches_mean,cumulative through formula=sse,cumulative,sse,f32,all32,fixed1,legacy42,1.0,0.01610730108324998,5000,5000,-0.0005374747842121774
+western|rand42|patches_mean,cumulative through dtype=f64,cumulative,sse,f64,all32,fixed1,legacy42,1.0,0.01610730108324998,5000,5000,-0.0005374747842121774
+western|rand42|patches_mean,cumulative through targets=position12,cumulative,sse,f64,position12,fixed1,legacy42,1.0,0.019696676384286405,5000,5000,0.0030519005168242463
+western|rand42|patches_mean,cumulative through alpha_mode=cv,cumulative,sse,f64,position12,cv,legacy42,10.0,0.019800612387766203,5000,5000,0.003155836520304045
+western|rand42|patches_mean,revised recipe,cumulative,sse,f64,position12,cv,unit0,10.0,0.020831719881942434,5000,5000,0.004186944014480276

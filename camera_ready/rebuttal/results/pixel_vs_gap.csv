@@ -1,0 +1,5 @@
+ds,pixel_d1_raw,pixel_forward_r2,pixel_d1_ceiling,mean_encoder_d1_gap
+svgworld,0.166434,0.994859,0.411638,0.166214
+dsprites,0.213463,0.496085,0.48903,-0.255144
+mpi3d_realistic,0.389467,0.635749,0.676338,-0.243666
+shapes3d,0.835577,0.998297,0.885442,-0.536761

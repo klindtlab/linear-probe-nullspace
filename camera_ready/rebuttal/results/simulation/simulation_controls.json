@@ -1,0 +1,38 @@
+{
+ "n_seeds": 5,
+ "width": 1024,
+ "lift_linearity_reverse_r2": null,
+ "audit_calibration": {
+  "forced_positive_n_regions": {
+   "mean": 1.0,
+   "min": 1.0,
+   "max": 1.0
+  },
+  "forced_positive_jacobian_cv": {
+   "mean": 2.3571881459499135e-15,
+   "min": 2.3158769788884175e-15,
+   "max": 2.4039981637522437e-15
+  },
+  "forced_positive_relu_active_fraction": {
+   "mean": 1.0,
+   "min": 1.0,
+   "max": 1.0
+  },
+  "all_seeds_single_region": true,
+  "all_seeds_constant_jacobian": true
+ },
+ "affine_selector": {
+  "k_selected": 2,
+  "reverse_r2": {
+   "mean": 0.8991738543197461,
+   "min": 0.8991738543197461,
+   "max": 0.8991738543197461
+  },
+  "trained_reverse_r2": {
+   "mean": 0.9935957597507541,
+   "min": 0.9844999553183429,
+   "max": 0.9978062381234338
+  },
+  "interpretation": "An affine map of x reaches this reverse R^2, so a high reverse R^2 from a weakly latent-linear lift does not by itself imply the network is nonaffine. Nondegeneracy rests on the activation statistics instead."
+ }
+}

@@ -1,0 +1,23 @@
+[project]
+name = "linear-probe-rebuttal"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+    "cairosvg>=2.7",
+    "kaleido==0.2.1",
+    "matplotlib>=3.9",
+    "pillow>=11",
+    "plotly<6.9",
+    "pyyaml",
+    "resvg-py>=0.3",
+]
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
+[tool.uv.sources]
+torch = { index = "pytorch-cpu" }
+torchvision = { index = "pytorch-cpu" }
+torchaudio = { index = "pytorch-cpu" }
