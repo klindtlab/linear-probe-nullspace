@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Is a linear probe evidence of a linear representation? Three asymmetric diagnostics separate a linear world model from a kernel machine.">
+  <meta name="keywords" content="linear probe, linear representation hypothesis, world model, DINOv3, random features, kernel machine, SVG-World">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Is a Linear Probe Evidence of a Linear Representation?</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&display=swap"
+        rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/computer-modern/cmu-serif.css">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        macros: {
+          R: "\\mathbb{R}",
+          E: "\\mathbb{E}",
+          tr: "\\operatorname{tr}",
+          Cov: "\\operatorname{Cov}",
+          rev: "\\mathrm{rev}"
+        }
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-2 publication-title">Is a <strong>Linear Probe</strong> Evidence of a Linear Representation?</h1>
+
+          <!-- TODO: confirm the author order and Christian's affiliation before publishing. -->
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              Nadir Kutluozen<sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=melu9g0AAAAJ&hl=en">Christian Intern&ograve;</a>,
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=EpT-nUAAAAAJ&hl=en">David Klindt</a><sup>1</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Cold Spring Harbor Laboratory</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- Paper button: uncomment and set the arXiv link once the preprint is out.
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/XXXX.XXXXX"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              -->
+              <span class="link-block">
+                <a href="https://github.com/klindtlab/linear-probe-nullspace"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fab fa-github"></i></span>
+                  <span>Code</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section" style="padding-top: 0.5rem;">
+  <div class="container is-max-desktop">
+
+    <div class="has-text-centered" style="margin-bottom: 1rem;">
+      <img src="./static/images/fig1_teaser.png"
+           alt="Latent trajectory, dSprites observation, and DINOv3 linear-probe reconstruction"
+           class="hero-media">
+      <p class="hero-caption">
+        <strong>Linear World Model.</strong> A 3D latent trajectory $z$ (left) generates images $x$ (middle) through a renderer. A linear probe $\hat z = W f(x)$ on DINOv3-B/16 features recovers the trajectory in latent space (right), inverting the rendering pipeline with a linear map. We ask when recovery is evidence of a linear world model rather than a generic property of any sufficiently rich feature map.
+      </p>
+    </div>
+
+    <div class="columns is-centered has-text-centered" style="margin-top: 2rem;">
+      <div class="column is-four-fifths">
+        <!-- TODO: replace with the camera-ready abstract (this is the submitted version). -->
+        <div class="abstract-box">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              The &lsquo;linear world model&rsquo; hypothesis holds that pretrained vision models encode generative factors as linearly decodable directions in feature space, and underwrites a standard methodology: train a linear probe, declare a factor &lsquo;represented&rsquo; if accuracy is high. We show this test is too permissive. Asymptotically, any sufficiently rich feature map, including a random one, admits a linear readout, so high probe accuracy is consistent with two very different geometries: a true <em>linear world model</em>, where the latent-aligned subspace dominates the representation, or a <em>kernel machine</em>, where the latents lie linearly inside a much larger curved manifold. The distinction is not academic. The curved structure orthogonal to the probe is precisely where out-of-distribution generalization, robustness, and compositional transfer live. We propose three asymmetric diagnostics that distinguish the two cases: <em>reverse predictivity</em>, <em>spectral concentration</em>, and <em>out-of-distribution generalization</em>. We validate them in a fully observed simulation where ground truth is known. Applied to pretrained vision encoders on SVG-World, our deterministic generative benchmark with paired visual styles, they show pretraining produces structure beyond a random kernel but well short of a true linear world model. Thus, forward decoding is not enough to certify the claims that have been built on it.
+            </p>
+          </div>
+        </div>
+        <p style="color: #aaa; font-size: 0.88rem; margin-top: 2.5rem; text-align: justify;">
+          <strong style="color: #000;">TL;DR:</strong>
+          A high linear-probe score does not show that a model has a linear world model: with enough features, even a random network is linearly decodable. Reverse predictivity, spectral concentration, and out-of-distribution transfer tell the two apart, and they place DINOv3 between a random kernel and a true linear world model.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3 has-text-centered">The Question</h2>
+        <div class="figure-card">
+          <img src="./static/images/fig6_lwm_vs_kernel.png" alt="Linear world model vs. kernel machine: a flat plane vs. a curved surface">
+          <p class="figure-caption">
+            <strong>Linear world model vs. kernel machine.</strong>
+            <strong>(a)</strong> A 2D latent grid.
+            <strong>(b, c)</strong> A linear world model lifts the grid to a flat plane (Def. 1); a kernel machine might lift it to a curved surface. Forward $R^2$ is high in both; reverse $R^2$ separates them (Prop. 2).
+            <strong>(d, e)</strong> Empirical realization in the simulation at $h = 1024$: forward-decoded $\hat z_1, \hat z_2$ against the top variance direction in the decoder's null space. Trained is a plane, random a curved manifold.
+          </p>
+        </div>
+
+        <div class="content has-text-justified">
+          <p>
+            <strong>The standard inference.</strong> Train a linear probe from frozen features $f(x) \in \R^d$ to the generative latents $z \in \R^k$, and declare $z$ &ldquo;represented&rdquo; when $R^2$ is high. The implicit claim: <em>if $z$ is linearly decodable from $f(x)$, then $f$ has learned $z$ as an axis of its representation.</em>
+          </p>
+          <p>
+            <strong>Why it is too permissive.</strong> Rich nonlinear feature maps, random ones included, are universal approximators in the kernel sense, so almost any smooth target can be linearly read out of them. A high forward $R^2$ is therefore consistent with two hypotheses: <strong>(H1)</strong> the model organized its representation around the latents, or <strong>(H2)</strong> the model is a high-dimensional feature map in which $z$ happens to lie linearly, regardless of training.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3 has-text-centered">Theoretical Results</h2>
+
+        <div class="theorem-box">
+          <div class="theorem-title">Definition 1: Linear World Model</div>
+          $f$ implements a linear world model of $z$ with residual $\sigma^2$ if there exist $W \in \R^{d \times k}$ and $\mu \in \R^d$ such that
+          $$f(x) = W z(x) + \mu + \varepsilon(x), \qquad \E\big[\varepsilon(x)\, z(x)^\top\big] = 0, \qquad \E\big[\|\varepsilon(x)\|^2\big] \le \sigma^2 \|W\|_F^2.$$
+          This is strictly stronger than &ldquo;$z$ is linearly decodable from $f$&rdquo;: it requires that <em>most</em> of $f$'s variance is aligned with $z$, not merely that $z$ lies inside the span of $f$.
+        </div>
+
+        <div class="theorem-box">
+          <div class="theorem-title">Proposition 1: Forward Decodability Is Asymptotically Free</div>
+          Let $k$ be a bounded continuous kernel whose RKHS contains every coordinate $z_j$, and let $f_{\text{rand}}(x) \in \R^d$ be a random feature map with $\E\, f_{\text{rand}}(x)^\top f_{\text{rand}}(x') \to k(x, x')$ as $d \to \infty$. Then for any $\epsilon > 0$ there is a $d_\epsilon$ such that for all $d \ge d_\epsilon$, with high probability over the draw of $f_{\text{rand}}$, some linear readout achieves $\E_x \|W f_{\text{rand}}(x) - z(x)\|^2 \le \epsilon$. In the limit, forward linear decodability is a property of having enough random features, not of having learned anything about $z$.
+        </div>
+
+        <div class="theorem-box">
+          <div class="theorem-title">Proposition 2: Reverse-Predictivity Asymmetry</div>
+          Suppose $f(x) = A z(x) + \mu + \varepsilon(x)$ with $\E[\varepsilon z^\top] = 0$. Then the optimal reverse probe $z \mapsto f$ achieves
+          $$R^2_{\rev} = \frac{\tr\!\big(A \Cov(z) A^\top\big)}{\tr\!\big(A \Cov(z) A^\top\big) + \tr \Cov(\varepsilon)}.$$
+          If $\varepsilon$ is dominated by a high-dimensional, $z$-independent nonlinear component (the kernel-machine regime), $R^2_{\rev}$ is small even when forward $R^2 \approx 1$.
+        </div>
+
+        <h3 class="title is-4 has-text-centered" style="margin-top: 2.5rem;">Three Asymmetric Diagnostics</h3>
+        <div class="content has-text-justified">
+          <p>
+            Each test exploits a different asymmetry between Definition 1 and the mere existence of a linear decoder. Under Definition 1, (D1) is near-tight, (D2) is near 1 for $k \le k_{\text{lat}}$, and (D3) gives near-in-distribution test scores. Under a rich kernel-machine map, forward $R^2$ can be high while all three fail.
+          </p>
+        </div>
+
+        <div class="theorem-box">
+          <div class="theorem-title">(D1) Reverse Predictivity</div>
+          Predict the features from the latents and measure the share of feature variance that is linear in $z$:
+          $$R^2_{\rev} = 1 - \frac{\E_x \|f(x) - W_{\rev} z(x) - \mu\|^2}{\E_x \|f(x) - \E f\|^2}, \qquad W_{\rev} = \arg\min_{W, \mu} \E_x \|f(x) - W z(x) - \mu\|^2.$$
+        </div>
+
+        <div class="theorem-box">
+          <div class="theorem-title">(D2) Spectral Concentration</div>
+          Under Definition 1 the latent-aligned subspace coincides with the top principal directions of $f$. We compute $R^2_{\rev}(k)$ after projecting $f$ onto its top-$k$ PCs, each rescaled to unit variance. For a linear world model the curve sits near 1 for $k \le k_{\text{lat}}$, because the latent-aligned directions are the leading principal directions; a kernel machine's curve decays from the start. Past $k_{\text{lat}}$ the curve falls even for an exact linear world model, since whitening rescales residual directions to unit variance, so the discriminating content is the height of the plateau at $k \le k_{\text{lat}}$.
+        </div>
+
+        <div class="theorem-box">
+          <div class="theorem-title">(D3) Out-of-Distribution Generalization</div>
+          Linear decodability that holds only within the training support is consistent with overfitting a rich nonlinear kernel. Train the probe under one condition and test it under another with the same latents: an encoder that learned position as a factor should transfer.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3 has-text-centered">Empirical Validation</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            <strong>A fully observed simulation.</strong> Latents $z \sim \mathrm{Unif}([-1, 1]^2)$ are mapped to features $f(z) \in \R^h$ by a two-layer ReLU MLP, at matched hidden width $h$ in two regimes: <em>random init</em> (fresh weights, no training) and <em>trained</em> (end-to-end with a linear readout, AdamW, weight decay $\lambda \in \{0, 1\}$). Forward $R^2$ for the random network rises with width until it matches the trained model, exactly as Proposition 1 predicts. Reverse $R^2$ keeps them apart at every width: close to 1 for the trained network with weight decay, about 0.2 for random init. In feature space the difference is visible directly (panels d, e of the figure above): trained is a flat plane, random a curved manifold.
+          </p>
+        </div>
+        <!-- TODO: add the camera-ready simulation figures here. The submitted width-sweep (Fig. 2) and
+             spectral (Fig. 3) figures were regenerated for the camera-ready, so they are left out for now. -->
+
+        <div class="content has-text-justified" style="margin-top: 2rem;">
+          <p>
+            <strong>SVG-World.</strong> To test pretrained vision encoders on the same terms, we need a data source with a small set of continuous latents, deterministic rendering, enough visual richness for nontrivial features, multiple objects, and a paired second visual style with the same latent layout. Each scene is rendered from a 32-dim latent $z \in [0, 1]^{32}$ with 20 active dimensions: four people with a position $(x, z)$, a facing direction and a skin hue, and two animals with a position. The layout is identical in AquaWorld and WestWorld; only the rendering differs ($N = 10{,}000$ scenes each, rasterized at $224 \times 224$).
+          </p>
+        </div>
+        <div class="figure-card">
+          <img src="./static/images/fig4_svg_world.png" alt="AquaWorld and WestWorld canonical scenes with position-latent arrows">
+          <p class="figure-caption">
+            Both panels show the canonical scene at $z = 0$; arrows mark the two position latents per object ($+x$ horizontal, $+z$ depth). AquaWorld (left) and WestWorld (right) share the latent layout but differ in rendering, enabling the cross-domain transfer test (D3).
+          </p>
+        </div>
+
+        <div class="content has-text-justified" style="margin-top: 2rem;">
+          <p>
+            <strong>DINOv3 forward decoding.</strong> We extract frozen DINOv3-B/16 features (CLS token and mean-pooled patch tokens, $d = 768$) on both worlds and fit ridge probes on a 50/50 split. As a baseline we use <em>random-init</em> DINOv3: the same architecture with freshly initialized weights. Pretrained DINOv3 recovers all 12 position latents with mean $\rho \approx 0.94$ (CLS), the kind of evidence routinely cited for the linear world model hypothesis. Random init partially decodes people but loses the animals almost completely, so the gap between pretrained and random init is largest on the animal positions.
+          </p>
+        </div>
+        <div class="figure-card">
+          <div style="overflow-x: auto;">
+          <table class="results-table">
+            <thead>
+              <tr class="head-top">
+                <th></th>
+                <th colspan="4">CLS token</th>
+                <th colspan="4">Mean-pooled patches</th>
+              </tr>
+              <tr class="head-mid">
+                <th></th>
+                <th colspan="2">Pearson $\rho$</th>
+                <th colspan="2">$R^2$</th>
+                <th colspan="2">Pearson $\rho$</th>
+                <th colspan="2">$R^2$</th>
+              </tr>
+              <tr class="head-units">
+                <th class="col-name">latent</th>
+                <th>pre</th><th>rand</th><th>pre</th><th>rand</th>
+                <th>pre</th><th>rand</th><th>pre</th><th>rand</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="col-name">p0_x</td>      <td>0.97</td><td class="rand">0.71</td><td>0.94</td><td class="rand">0.47</td><td>0.93</td><td class="rand">0.68</td><td>0.85</td><td class="rand">0.41</td></tr>
+              <tr><td class="col-name">p0_z</td>      <td>0.95</td><td class="rand">0.80</td><td>0.89</td><td class="rand">0.61</td><td>0.90</td><td class="rand">0.76</td><td>0.80</td><td class="rand">0.55</td></tr>
+              <tr><td class="col-name">p1_x</td>      <td>0.91</td><td class="rand">0.49</td><td>0.82</td><td class="rand">0.21</td><td>0.82</td><td class="rand">0.44</td><td>0.65</td><td class="rand">0.16</td></tr>
+              <tr><td class="col-name">p1_z</td>      <td>0.95</td><td class="rand">0.72</td><td>0.89</td><td class="rand">0.50</td><td>0.90</td><td class="rand">0.70</td><td>0.80</td><td class="rand">0.45</td></tr>
+              <tr><td class="col-name">p2_x</td>      <td>0.93</td><td class="rand">0.50</td><td>0.86</td><td class="rand">0.20</td><td>0.86</td><td class="rand">0.46</td><td>0.71</td><td class="rand">0.16</td></tr>
+              <tr><td class="col-name">p2_z</td>      <td>0.95</td><td class="rand">0.60</td><td>0.90</td><td class="rand">0.32</td><td>0.90</td><td class="rand">0.58</td><td>0.79</td><td class="rand">0.25</td></tr>
+              <tr><td class="col-name">p3_x</td>      <td>0.95</td><td class="rand">0.68</td><td>0.91</td><td class="rand">0.42</td><td>0.91</td><td class="rand">0.63</td><td>0.81</td><td class="rand">0.30</td></tr>
+              <tr><td class="col-name">p3_z</td>      <td>0.93</td><td class="rand">0.74</td><td>0.87</td><td class="rand">0.52</td><td>0.88</td><td class="rand">0.73</td><td>0.76</td><td class="rand">0.42</td></tr>
+              <tr class="group-sep"><td class="col-name">dolphin_x</td> <td>0.93</td><td class="rand">0.42</td><td>0.86</td><td class="rand">0.25</td><td>0.95</td><td class="rand">0.24</td><td>0.89</td><td class="rand">0.07</td></tr>
+              <tr><td class="col-name">dolphin_z</td> <td>0.97</td><td class="rand">0.50</td><td>0.94</td><td class="rand">0.31</td><td>0.98</td><td class="rand">0.45</td><td>0.96</td><td class="rand">0.25</td></tr>
+              <tr><td class="col-name">turtle_x</td>  <td>0.88</td><td class="rand">0.18</td><td>0.76</td><td class="rand">0.03</td><td>0.94</td><td class="rand">0.13</td><td>0.86</td><td class="rand">0.02</td></tr>
+              <tr><td class="col-name">turtle_z</td>  <td>0.95</td><td class="rand">0.32</td><td>0.90</td><td class="rand">0.09</td><td>0.97</td><td class="rand">0.29</td><td>0.94</td><td class="rand">0.06</td></tr>
+              <tr class="group-sep mean-row"><td class="col-name">person mean</td> <td>0.94</td><td class="rand">0.65</td><td>0.89</td><td class="rand">0.41</td><td>0.89</td><td class="rand">0.62</td><td>0.77</td><td class="rand">0.34</td></tr>
+              <tr class="mean-row"><td class="col-name">animal mean</td> <td>0.93</td><td class="rand">0.35</td><td>0.87</td><td class="rand">0.17</td><td>0.96</td><td class="rand">0.28</td><td>0.91</td><td class="rand">0.10</td></tr>
+              <tr class="mean-row"><td class="col-name">all mean</td>    <td>0.94</td><td class="rand">0.55</td><td>0.88</td><td class="rand">0.33</td><td>0.91</td><td class="rand">0.51</td><td>0.82</td><td class="rand">0.26</td></tr>
+            </tbody>
+          </table>
+          </div>
+          <p class="figure-caption">
+            <strong>DINOv3-B/16 forward decoding on SVG-World</strong>, per position latent, averaged over AquaWorld and WestWorld. <em>Pre</em>: pretrained. <em>Rand</em>: same architecture, freshly initialized. Forward decoding separates pretrained from random init at $d = 768$, but per the simulation this gap alone does not establish Definition 1.
+          </p>
+        </div>
+
+        <div class="content has-text-justified" style="margin-top: 2rem;">
+          <p>
+            <strong>Reverse predictivity and spectral concentration.</strong> On raw CLS features, pretrained DINOv3 reaches $R^2_{\rev} = 0.18$ vs. $0.02$ for random init; on mean-pooled patches, $0.28$ vs. $0.02$. The pretrained-vs-random gap is roughly $10\times$, far larger in relative terms than the $\sim 1.7\times$ forward gap: <em>the forward gap understates how much more latent-aligned variance pretraining has</em>. Sweeping the PCA-whitening cutoff $k$ shows where that variance lives: pretrained's $R^2_{\rev}(k)$ is largest at $k \approx 32$, close to the active latent dimension, and decays as $k$ grows, while random init stays flat near $0.02$.
+          </p>
+        </div>
+        <div class="figure-card is-narrow">
+          <img src="./static/images/fig9_reverse_whitening.png" alt="Reverse R2 versus PCA-whitening cutoff k for CLS and mean-pooled patch features">
+          <p class="figure-caption">
+            <strong>Reverse predictivity (D1) and spectral concentration (D2).</strong> $R^2_{\rev}$ vs. PCA-whitening cutoff $k$; solid lines whiten the top-$k$ PCs to unit variance, dashed lines are raw features. Pretrained's latent-aligned variance concentrates in the top $\sim$32 to 64 PCs; random's is diffuse. By $k = 768$ both collapse.
+          </p>
+        </div>
+
+        <div class="content has-text-justified" style="margin-top: 2rem;">
+          <p>
+            <strong>Out-of-distribution generalization across visual styles.</strong> For (D3) we train a ridge probe on one world's features and evaluate it on the other's, with features mean-centered per world so that what is tested is the transfer of <em>directions</em>, not feature means. Pretrained averages $\rho = 0.91$ within domain vs. $0.51$ for random ($\Delta\rho = 0.41$). Cross-domain both fall (pretrained $0.65$, random $0.23$), but the gap is unchanged: $\Delta\rho = 0.42$. The encoder's positional directions transfer across the AquaWorld&harr;WestWorld stylistic gap.
+          </p>
+        </div>
+        <div class="figure-card is-narrow">
+          <img src="./static/images/fig5_ood.png" alt="Per-latent Pearson rho within and across domains for pretrained and random DINOv3">
+          <p class="figure-caption">
+            <strong>Cross-domain transfer (D3).</strong> Per-latent test $\rho$ on DINOv3-B/16 mean-pooled patches, within domain and cross domain (averaged over AquaWorld&rarr;WestWorld and the reverse). The pretrained-vs-random gap holds within domain ($\Delta\rho = 0.41$) and across domains ($\Delta\rho = 0.42$).
+          </p>
+        </div>
+
+        <div class="content has-text-justified" style="margin-top: 2rem;">
+          <p>
+            <strong>Takeaway.</strong> Forward $\rho \approx 0.94$ separates pretrained from random DINOv3 and rules out the strongest &ldquo;kernel machine in disguise&rdquo; reading, but it does not establish Definition 1. The asymmetric diagnostics place DINOv3 partway between the trained simulation (all diagnostics at 1) and a kernel-machine null: reverse $R^2$ is small in absolute terms but $\approx 10\times$ the random baseline, the latent-aligned variance concentrates in the top $\sim$32 to 64 PCs, and the positional directions are style-invariant. Whether a representation behaves as a linear world model depends on the training pressures acting on it.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">Citation (BibTeX)</h2>
+    <pre><code>@article{kutluozen2026linear,
+  author    = {Kutluozen, Nadir and Intern{\`o}, Christian and Klindt, David},
+  title     = {Is a Linear Probe Evidence of a Linear Representation?},
+  year      = {2026},
+  journal   = {arXiv preprint arXiv:XXXX.XXXXX},
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer" style="padding: 2rem 1.5rem;">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths has-text-centered" style="font-size: 0.85rem; color: #888;">
+        Page template adapted from
+        <a href="https://nerfies.github.io/" style="color: #888; text-decoration: underline;">Nerfies</a>
+        and <a href="https://klindtlab.github.io/lejepa-identifiability/" style="color: #888; text-decoration: underline;">LeJEPA Identifiability</a>.
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+</body>
+</html>
