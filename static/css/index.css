@@ -258,3 +258,8 @@ mjx-container[display="true"] {
   overflow-y: hidden;
   max-width: 100%;
 }
+
+/* "pretrained / random" cells: random value in grey */
+.results-table span.rand {
+  color: #888;
+}
