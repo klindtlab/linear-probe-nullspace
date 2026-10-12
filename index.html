@@ -69,6 +69,12 @@
             <span class="author-block"><sup>*</sup>Equal contribution</span>
           </div>
 
+          <div class="is-size-6 publication-authors">
+            <span class="author-block">Correspondence:</span>
+            <span class="author-block"><a href="mailto:nadirkutluozen.nk@gmail.com">nadirkutluozen.nk@gmail.com</a>,</span>
+            <span class="author-block"><a href="mailto:christian.interno@uni-bielefeld.de">christian.interno@uni-bielefeld.de</a></span>
+          </div>
+
           <div class="column has-text-centered">
             <div class="publication-links">
               <!-- Paper button: uncomment and set the arXiv link once the preprint is out.
@@ -236,13 +242,13 @@
             <strong>Setup.</strong> Latents $z \sim \mathrm{Unif}([-1, 1]^2)$ are first lifted by a frozen random Fourier map to 256 dimensions, then mapped to features $f \in \R^h$ by a two-layer ReLU MLP. We compare two regimes at matched hidden width $h$: <em>random init</em>, fresh weights and no training; and <em>trained</em>, the same architecture trained end-to-end with a linear readout to recover $z$, with weight decay $\lambda \in \{0, 1\}$. The trained network is nonlinear: at $h = 1024$ it visits 1988 ReLU activation regions on average and its Jacobian varies across inputs.
           </p>
           <p>
-            <strong>Forward decoding alone does not separate the two.</strong> Random-init forward $R^2$ rises smoothly with width and reaches $\approx 1$ by $h \approx 100$, as Proposition 1 predicts. Reverse $R^2$ keeps them apart at every width. At $h = 1024$, reverse $R^2$ is 0.9935 with $\lambda = 1$ vs. 0.7841 with $\lambda = 0$, at identical forward $R^2$ of 1.000: <em>satisfying Definition 1 is a tunable property of training pressure, not just a binary trained-vs-not property.</em>
+            <strong>Forward decoding alone does not separate the two.</strong> Random-init forward $R^2$ rises smoothly with width and reaches $\approx 1$ by $h \approx 100$, as Proposition 1 predicts. Reverse $R^2$ and the top-2 share separate trained from random at every width. At $h = 1024$, reverse $R^2$ is 0.9935 with $\lambda = 1$ vs. 0.7841 with $\lambda = 0$, at identical forward $R^2$ of 1.000: <em>satisfying Definition 1 is a tunable property of training pressure, not just a binary trained-vs-not property.</em>
           </p>
         </div>
         <div class="figure-card">
           <img src="./static/images/fig3_sim_width.png" alt="Forward R2, reverse R2, spectral concentration and OOD R2 versus hidden width">
           <p class="figure-caption">
-            <strong>Diagnostics on the simulation across hidden width $h$.</strong> Random init (orange) reproduces the asymptotic random-features prediction: forward $R^2 \to 1$ as $h$ grows, while reverse $R^2$ and the top-2 share stay low and OOD $R^2$ catches up only at large widths. Trained with weight decay $\lambda = 1$ (dark blue), all four diagnostics sit flat at $\approx 1$ across widths. Without weight decay (light blue), reverse $R^2$ and spectral concentration dip at intermediate widths: the linear-world-model condition is sensitive to training pressure even when forward $R^2$ saturates.
+            <strong>Diagnostics on the simulation across hidden width $h$.</strong> Random init (orange) reproduces the asymptotic random-features prediction: forward $R^2 \to 1$ as $h$ grows, while reverse $R^2$ and the top-2 share stay low and OOD $R^2$ catches up only at large widths. Trained with weight decay $\lambda = 1$ (dark blue), all four diagnostics sit flat at $\approx 1$ across widths. Without weight decay (light blue), reverse $R^2$ and the top-2 share dip at intermediate widths: the linear-world-model condition is sensitive to training pressure even when forward $R^2$ saturates. The third panel is the share of variance in the top two PCs that is linear in $z$, without whitening.
           </p>
         </div>
 
@@ -276,7 +282,7 @@
 
         <div class="content has-text-justified" style="margin-top: 2rem;">
           <p>
-            <strong>DINOv3 forward decoding.</strong> We extract frozen DINOv3-B/16 features on both worlds (CLS token and mean of patch tokens, $d = 768$), fit ridge probes per latent, and compare against <em>random-init</em> DINOv3, the same architecture with freshly initialized weights. Pretrained DINOv3 recovers all 12 position latents with mean $\rho \approx 0.94$ ($R^2 = 0.88$) on CLS and 0.91 (0.82) on mean-pooled patches, the kind of evidence routinely cited for the linear representation hypothesis. Random init partially decodes person positions ($R^2 = 0.41$) but loses the animals almost completely ($R^2 = 0.17$). This forward gap does not by itself establish Definition 1; the asymmetric diagnostics test the structural claim directly.
+            <strong>DINOv3 forward decoding.</strong> We extract frozen DINOv3-B/16 features on both worlds (CLS token and mean of patch tokens, $d = 768$), fit ridge probes per latent, and compare against <em>random-init</em> DINOv3, the same architecture with freshly initialized weights. Pretrained DINOv3 recovers all 12 position latents with mean $\rho \approx 0.94$ ($R^2 = 0.88$) on CLS and 0.91 (0.82) on mean-pooled patches, the kind of evidence routinely cited for the linear representation hypothesis. Random init partially decodes person positions ($R^2 = 0.41$) but loses the animals almost completely ($R^2 = 0.17$). These values use a fixed ridge penalty, which penalizes the lower-variance random features more strongly; with a cross-validated penalty random init reaches $R^2 = 0.66$, but the gap on animals remains. This forward gap does not by itself establish Definition 1; the asymmetric diagnostics test the structural claim directly.
           </p>
         </div>
         <div class="figure-card">
@@ -288,7 +294,7 @@
 
         <div class="content has-text-justified" style="margin-top: 2rem;">
           <p>
-            <strong>Reverse predictivity and spectral concentration.</strong> On raw CLS features, pretrained DINOv3 reaches $R^2_{\rev} = 0.18$ vs. 0.02 for random init; on mean-pooled patches, 0.28 vs. 0.02. Over five random initializations, the CLS gap is 0.187 [0.182, 0.191] in AquaWorld and 0.143 [0.139, 0.148] in WestWorld. The pretrained-vs-random ratio is about $10\times$, larger than the forward ratio of $\sim 1.7\times$: <em>the forward gap understates how much more latent-aligned variance pretraining has.</em> Against the ceiling of Proposition 3 the separation is sevenfold: on AquaWorld CLS features ($R^2_{\rev} = 0.212$, $C_{12} = 0.609$), pretrained reaches 0.35 of the attainable share and random init 0.05. Pretrained DINOv3-B/16 needs its top 17 principal components to collect 90% of its latent-predictable variance, against 55 to 59 for its random initializations.
+            <strong>Reverse predictivity and spectral concentration.</strong> On raw CLS features, pretrained DINOv3 reaches $R^2_{\rev} = 0.18$ vs. 0.02 for random init; on mean-pooled patches, 0.28 vs. 0.02. Over five random initializations, the CLS gap is 0.187 [0.182, 0.191] in AquaWorld and 0.143 [0.139, 0.148] in WestWorld. The pretrained-vs-random ratio is approximately $10\times$, much larger than the forward ratio ($\approx 1.4\times$ with a cross-validated penalty): <em>the forward gap understates how much more latent-aligned variance pretraining has.</em> Against the ceiling of Proposition 3 the separation is sevenfold: on AquaWorld CLS features ($R^2_{\rev} = 0.212$, $C_{12} = 0.609$), pretrained reaches 0.35 of the attainable share and random init 0.05. Pretrained DINOv3-B/16 needs its top 17 principal components to collect 90% of its latent-predictable variance, against 55 to 59 for its random initializations.
           </p>
         </div>
         <div class="figure-card is-narrow">
@@ -300,7 +306,7 @@
 
         <div class="content has-text-justified" style="margin-top: 2rem;">
           <p>
-            <strong>Out-of-distribution generalization across visual styles.</strong> We train a ridge probe on one world's features and evaluate it on the other's, with features mean-centered per world so that what is tested is the transfer of <em>directions</em>, not feature means. Pretrained averages $\rho = 0.91$ within domain vs. 0.51 for random ($\Delta\rho = 0.41$). Cross-domain both fall (pretrained 0.65, random 0.23), but the gap is unchanged: $\Delta\rho = 0.42$. The encoder's positional directions transfer across the AquaWorld&harr;WestWorld stylistic gap as cleanly as they exist within a single world. We report $\rho$ because feature scales differ between the two styles; after rescaling the probe output on half of the target style, transfer $R^2$ is 0.16 and 0.31 in the two directions for pretrained, against 0.01 and 0.02 for random init.
+            <strong>Out-of-distribution generalization across visual styles.</strong> We train a ridge probe on one world's features and evaluate it on the other's, with features mean-centered per world so that what is tested is the transfer of <em>directions</em>, not feature means. Pretrained averages $\rho = 0.91$ within domain vs. 0.51 for random ($\Delta\rho = 0.41$). Cross-domain both fall (pretrained 0.65, random 0.23), but the gap between them does not shrink: $\Delta\rho = 0.42$. The encoder's positional directions transfer across the AquaWorld&harr;WestWorld stylistic gap as cleanly as they exist within a single world. We report $\rho$ because feature scales differ between the two styles; after rescaling the probe output on half of the target style, transfer $R^2$ is 0.16 and 0.31 in the two directions for pretrained, against 0.01 and 0.02 for random init.
           </p>
         </div>
         <div class="figure-card">
@@ -360,7 +366,7 @@
                 <strong>Real photographs.</strong> On CelebA, with the 40 annotated attributes as the factor set, the pretrained encoders reach 0.28 to 0.36 of their ceiling against 0.07 to 0.11 at random initialization, close to the SVG-World values (0.35 vs. 0.05). Spectral concentration separates them as clearly (0.15 to 0.17 vs. 0.02 to 0.03). CLIP's raw $R^2_{\rev}$ exceeds that of DINOv3 CLS (0.192 vs. 0.170), but both reach 0.28 of the ceiling.
               </p>
               <p>
-                In summary, pretraining raises the share of latent-aligned variance well above random initialization on every encoder and dataset where the comparison is unambiguous, but the probed factors take at most about half of what any linear image of them could reach.
+                In summary, on SVG-World and CelebA pretraining raises the latent-aligned share well above random initialization, yet the best encoders reach only about a third of their ceiling, far from the linear-world-model regime of the simulation; on the controlled benchmarks the comparison depends on encoder, dataset and factor encoding.
               </p>
             </div>
           </div>
